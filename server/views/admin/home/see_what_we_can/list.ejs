@@ -1,0 +1,101 @@
+<%- include('../../../partials/header'); %>
+    <%- include('../../../partials/sidebar'); %>
+        <div class="content-wrapper">
+            <%- include("../../../notify"); %> 
+            <%- toasts %>
+
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">See what we can</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">See what we can</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <!-- <h1>Course Categories</h1> -->
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <% permissions.forEach((element,index)=>{%>
+                                    <% if(permissions[index].permission_slug=="add_see_what_we_can"){%>
+                              
+                                <a href="/add-see-what"class="btn btn-primary" >Add</a>
+                                <% }%>
+                                <% })%>
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+           
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">See what we can</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Icon</th>                               
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(list.length){ list.forEach((element,index)=>{%>
+                                 
+                                        <tr>
+                                            <td>
+                                                <%= index+1 %>
+                                            </td>
+                                            <td>
+                                                <%- element.title %>
+                                            </td>
+                                            <td>
+                                                <%- element.description %>
+                                            </td>
+                                            <td>
+                                                <img style="max-height: 50px; min-height: 50px;" src="/uploaded-files/<%= element.icon %>">
+                                            </td>
+                                            <td>
+                                                <% permissions.forEach((element1,index)=>{%>
+                                                    <% if(permissions[index].permission_slug=="delete_see_what_we_can"){%>
+                                                <a href="/delete-see-what?id=<%= element.id %>" ><i class="fa fa-trash-o" style="font-size:25px; color:red"></i></a>
+                                                <%  }%>
+
+                                                <% if(permissions[index].permission_slug=="edit_see_what_we_can"){%>
+                                                <a href="/update-see-what?id=<%= element.id %>" ><i class='fas fa-pen-nib' style="font-size:25px;"></i></a>
+                                                <%  }%>
+                                             </td>                                            
+                                             <%  })   %>
+                                        </tr>
+                                        <%  })  } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <%- include('../../../partials/footer'); %>
+      
+        

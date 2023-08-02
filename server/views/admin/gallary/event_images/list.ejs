@@ -1,0 +1,98 @@
+<%- include('../../../partials/header'); %>
+    <%- include('../../../partials/sidebar'); %>
+        <div class="content-wrapper">
+            <%- include("../../../notify"); %>
+            <%- toasts %> 
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Event Images</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Event Images</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <!-- <h1>Course Categories</h1> -->
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <% if(event_id) {%>
+                                    <a href="/add-event-images?event_id=<%=event_id %>" class="btn btn-primary">Add</a>
+                                    <a href="/event-list" class="btn btn-primary ml-3">Back</a>
+                                    
+                                    <%}%>
+                              
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+           
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Event Images List</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No</th>
+                                        <th>Title</th>
+                                        <!-- <th>Banner Sub Title</th> -->
+                                       
+                                       
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                    <% if(list?.length){ list?.forEach((element,index)=>{%>
+                                 
+                                        <tr>
+                                            <td>
+                                                <%= index+1 %>
+                                            </td>
+                                            <td>
+                                                <%= element?.event_id?.title%>
+                                            </td>
+                                            
+                                           
+                                            <td>
+                                               <img style="max-height: 50px; min-height: 50px;" src="/uploaded-files/<%=element?.image%>">
+                                            </td>
+
+                                            <td>
+                                                <a href="/delete-event-images?id=<%= element?._id %>" ><i class="fa fa-trash-o" style="font-size:25px; color:red"></i></a>
+                
+                                                <a href="/update-event-images?id=<%= element?._id %>" ><i class='fas fa-pen-nib' style="font-size:25px;"></i></a>
+                                             </td>
+                                            
+                                           
+                                        </tr>
+                                        <%  })  } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <%- include('../../../partials/footer'); %>
+      
+        

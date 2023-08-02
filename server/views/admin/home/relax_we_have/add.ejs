@@ -1,0 +1,100 @@
+<%- include('../../../partials/header'); %>
+    <%- include('../../../partials/sidebar'); %>
+    
+        <div class="content-wrapper">
+
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Relax We Have</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Relax We Have</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include("../../../notify"); %> 
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <a href="/relax-we-have-list" class="btn btn-primary">Back</a>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+                        <section class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card card-primary">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Add Relax We Have</h3>
+                                            </div>
+
+                                            <form id="innovativeForm" action="/relax-we-have-store" method="POST" >   
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Success Champions</label>
+                                                    <input type="number" name="success_champions" class="form-control"
+                                                        id="exampleInputEmail1" placeholder="Enter number" required>
+                                                </div>                                             
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Salesforce Certification</label>
+                                                    <input type="number" name="salesforce" class="form-control"
+                                                        id="exampleInputEmail1" placeholder="Enter number" required>
+                                                </div>       
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Happy Customers</label>
+                                                    <input type="number" name="happy_customers" class="form-control"
+                                                        id="exampleInputEmail1" placeholder="Enter number" required>
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Projects Delivered</label>
+                                                    <input type="number" name="project_delivered" class="form-control"
+                                                        id="exampleInputEmail1" placeholder="Enter number" required>
+                                                </div>  
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Go To  Market Solutions</label>
+                                                    <input type="number" name="market_solutions" class="form-control"
+                                                        id="exampleInputEmail1" placeholder="Enter number" required>
+                                                </div>    
+
+                                                <div class="card-footer">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+        </div>
+        
+        <script>
+            
+        let d= CKEDITOR.replace('description');
+        
+        </script>
+        <%- include('../../../partials/footer'); %>
+        

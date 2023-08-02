@@ -1,0 +1,110 @@
+<%- include('../../../partials/header'); %>
+    <%- include('../../../partials/sidebar'); %>
+    
+        <div class="content-wrapper">
+
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Happy Customers</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Happy Customers</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include("../../../notify"); %> 
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <a href="/happy-customers-list" class="btn btn-primary">Back</a>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+                        <section class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card card-primary">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Add Happy Customers</h3>
+                                            </div>
+
+                                            <form id="bannerForm" action="/update-happy-customers-store" method="POST" enctype="multipart/form-data">
+
+                                                <div class="card-body">
+                                                 <input type="hidden" value="<%= happyCustomer.id %>" name="id" >
+
+                                                    <!-- <div class="form-group">
+                                                        <label for="exampleInputEmail1">Service Type</label>
+                                                        <input type="text" value="<%= happyCustomer.type %> " name="type" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter Bannner title" required>
+                                                    </div> -->
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Name</label>
+                                                        <input type="text" name="name" value="<%= happyCustomer.name %> "class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter Name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1"> image</label>
+                                                        <input type="file" name="image" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter  image" >
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Degination</label>
+                                                        <input type="text" name="degination" 
+                                                        value="<%= happyCustomer.degination %>" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter degination" required>
+                                                    </div>
+
+                                            
+                                                <label for="exampleInputPassword1">Descrition</label>
+                                                <div class="form-group " >
+                                                    
+                                                    <textarea name="description" id="description" class="form-control"
+                                                        id="details" cols="20" rows="5" required><%- happyCustomer.description %></textarea>
+                                                </div>
+                                                
+                                                
+
+                                                <div class="card-footer">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+        </div>
+        
+        <script>
+            
+        let d= CKEDITOR.replace('description');
+        
+        </script>
+        <%- include('../../../partials/footer'); %>
+        

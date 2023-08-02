@@ -1,0 +1,5 @@
+<% if (typeof successMessage != 'undefined' && successMessage) { %>
+    <div class="alert alert-success" id="element_id"><%- successMessage %></div>
+    <% } else if(typeof errorMessage != 'undefined' && errorMessage) { %>
+    <div class="alert alert-danger" id="element_id2"><%- errorMessage %></div>
+    <% } %>

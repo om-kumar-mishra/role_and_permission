@@ -1,0 +1,570 @@
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+	<a href="/" class="brand-link">
+		<img src="/img/AdminLTELogo.png" alt="Role And Permission" Logo" class="brand-image img-circle elevation-3"
+			style="opacity: .8">
+		<span class="brand-text font-weight-light">Role And Permission</span>
+	</a>
+
+	<div class="sidebar">
+
+		<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+			<div class="image">
+				<img src="/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+			</div>
+			<div class="info">
+				<a href="/profile" class="d-block">
+					<%= userdetials.name ? userdetials.name : "Super admin" %>
+				</a>
+			</div>
+		</div>
+
+		
+
+		<nav class="mt-2">
+			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+				<li class="nav-item menu-open">
+					<a href="/" class="nav-link active">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							Dashboard
+							<!-- <i class="right fas fa-angle-left"></i> -->
+						</p>
+					</a>
+				
+				</li>
+				
+                <% permissions.forEach((element,index)=>{%>
+					
+					
+					
+					<% if(permissions[index].permission_slug=="view_home"){%>
+						<li class="nav-item">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-chart-pie"></i>
+								<p>
+									Home
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<% permissions.forEach((element,index)=>{%>
+								
+								<% if(permissions[index].permission_slug=="view_banner"){%>
+								<li class="nav-item">
+									<a href="/get-banner-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Banners</p>
+									</a>
+								</li>
+		                        <%}%>
+
+
+								<% if(permissions[index].permission_slug=="view_see_what_we_can"){%>
+								<li class="nav-item">
+									<a href="/see-what-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>See what we can</p>
+									</a>
+								</li>
+								<%}%>
+
+
+								<%})%>
+								<!-- <li class="nav-item">
+									<a href="/remote-staff-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Remote Staff</p>
+									</a>
+								</li> -->
+								<!-- <li class="nav-item">
+									<a href="/innovative-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Innovative</p>
+									</a>
+								</li> -->
+								<!-- <li class="nav-item">
+									<a href="/relax-we-have-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Relax We Have</p>
+									</a>
+								</li>
+								
+								<li class="nav-item">
+									<a href="/happy-customers-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Happy Customer</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="/be-belive-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>We belive in</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="/ready-to-talk-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Ready To Talk</p>
+									</a>
+								</li> -->
+								<!-- <li class="nav-item">
+									<a href="/main-service-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Main Service  List</p>
+									</a>
+								</li> -->
+								<!-- <li class="nav-item">
+									<a href="/our-awesome-team-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Our Awesome Team</p>
+									</a>
+								</li> -->
+								<!-- <li class="nav-item">
+									<a href="/news-letters" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>News letter  List</p>
+									</a>
+								</li> -->
+								
+		
+								
+								<!-- <li class="nav-item">
+									<a href="/contacts" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Contact  List</p>
+									</a>
+								</li> -->
+								<!-- <li class="nav-item">
+									<a href="/faq-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>FAQ  List</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="/slug-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Slug List</p>
+									</a>
+								</li> -->
+
+
+								<li class="nav-item">
+									<a href="/happy-customers-list" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Happy Customer</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+						
+						
+						<%}%>
+					
+				
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Partner 
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/partner-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Partner Icon List</p>
+							</a>
+						</li>
+					</ul>
+				</li> -->
+<!--    
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Securtiy Service 
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/security-service" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Security Service  List</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				 -->
+				 <!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Industry
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						
+				        <li class="nav-item">
+							<a href="/industry-banner-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Industry Banner</p>
+							</a>
+						</li>
+						
+				        <li class="nav-item">
+							<a href="/industry-box-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Industry Box</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/industry-main-title-page-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Industry Main Title Page List</p>
+							</a>
+						</li>
+					</ul>
+				</li>  -->
+			
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Testimonial
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/testimonial-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Testimonial  List</p>
+							</a>
+						</li>
+					</ul>
+				</li> -->
+
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							News letter
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/news-letters" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>News letter  List</p>
+							</a>
+						</li>
+					</ul>
+				</li> -->
+
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Blog
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/blogs" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Blog  List</p>
+							</a>
+						</li>
+					</ul>
+				</li> -->
+
+				 <!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Contact
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/contacts-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Contact  List</p>
+							</a>
+						</li>
+					</ul>
+				</li>  -->
+                 
+
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							FAQ
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/faq-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>FAQ  List</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a href="/faq-contacts" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>FAQ Conatct List</p>
+							</a>
+						</li>
+					</ul>
+				</li>  -->
+
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							CMS
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/slug-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>CMS List</p>
+							</a>
+						</li>
+					</ul>
+				</li>  -->
+
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Service
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/service-banner-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Service Banner</p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a href="/service-main-title-page-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Service Main Title Page</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/service-box-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Service Box</p>
+							</a>
+						</li>
+					</ul>
+				</li> -->
+
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Contact Us 
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/contact-us-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Contact Us  List</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/contact-banner-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Banner</p>
+							</a>
+						</li>
+						
+						
+					</ul>
+				</li> -->
+
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Gallary
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/gallary-banner-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Gallary Banner</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/common-banner-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Common Banner</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/common-video-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Video</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/common-image-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Images</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/event-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Event</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/event-images-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Event Images</p>
+							</a>
+						</li>
+						
+						
+					</ul>
+				</li> -->
+				<li class="nav-item">
+					<a href="/event-list" class="nav-link">
+						<i class="far fa-circle nav-icon"></i>
+						<p>Event</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="/event-images-list" class="nav-link">
+						<i class="far fa-circle nav-icon"></i>
+						<p>Event Images</p>
+					</a>
+				</li>
+            	<% if(permissions[index].permission_slug=="view_role_and_permission"){%>
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							Role and permission
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					
+					
+					<ul class="nav nav-treeview">
+						<% permissions.forEach((element,index)=>{%>
+						<% if(permissions[index].permission_slug=="view_role"){%>
+						<li class="nav-item">
+							<a href="/role-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>role management</p>
+							</a>
+						</li>
+						<%}%>
+						
+						<!-- <li class="nav-item">
+							<a href="/permission-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Permission  List</p>
+							</a>
+						</li> -->
+						<% if(permissions[index].permission_slug=="view_user"){%>
+						<li class="nav-item">
+							<a href="/signup-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>User  Management</p>
+							</a>
+						</li>
+						<%}%>
+
+
+
+						<!-- <li class="nav-item">
+							<a href="/model-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Model List</p>
+							</a>
+						</li> -->
+
+
+						<!-- <li class="nav-item">
+							<a href="/get-login-page" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Login</p>
+							</a>
+						</li> -->
+						<%})%>
+					</ul>
+					
+				</li>
+				<%}%>
+				<!-- <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							About 
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+				        <li class="nav-item">
+							<a href="/we-are-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Who We Are  List</p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a href="/our-vision-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Our Vision  List</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/our-mission-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Our Mission  List</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/career-list" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Career List</p>
+							</a>
+						</li>
+					</ul>
+				</li> -->
+			</ul>
+
+			<%})%>
+		</nav>
+
+	</div>
+
+</aside>

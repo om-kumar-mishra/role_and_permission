@@ -1,0 +1,99 @@
+<%- include('../partials/header'); %>
+    <%- include('../partials/sidebar'); %>
+        <div class="content-wrapper">
+            <%- include("../notify"); %> 
+            <%- toasts %>
+
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Role</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Role</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <!-- <h1>Course Categories</h1> -->
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <% permissions?.forEach((element,index)=>{%>
+                                    <% if(permissions[index]?.permission_slug=="add_role"){%>
+                                    <a href="/add-role" class="btn btn-primary">Add</a>
+                                    <%  } %>
+                                
+                                <%  })   %>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+           
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Role</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No</th>
+                                        <th>Role</th>
+                                                         
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(list?.length){ list?.forEach((element,index)=>{%>
+                                 
+                                        <tr>
+                                            <td>
+                                                <%= index+1 %>
+                                            </td>
+                                            <td>
+                                                <%- element?.role_name %>
+                                            </td>
+                                          
+                                           
+                                       <td>
+                                        <% permissions?.forEach((element1,index)=>{%>
+                                            <% if(permissions[index]?.permission_slug=="delete_role"){%>
+                                                <a href="/delete-role?id=<%= element.id %>" ><i class="fa fa-trash-o" style="font-size:25px; color:red"></i></a>
+                                                <%  } %>
+                                                <% if(permissions[index]?.permission_slug=="edit_role"){%>
+                                                <a href="/update-role?id=<%= element.id %>" ><i class='fas fa-pen-nib' style="font-size:25px;"></i></a>
+                                                <%  } %>
+                                                <% if(permissions[index]?.permission_slug=="assign_permission"){%>
+                                                <a href="/get-permission-page?id=<%= element.id %>" >ASSIGN PERMISSION</a>
+                                                <%  } %>
+                                                <%  })   %>
+                                             </td>
+                                            
+                                           
+                                        </tr>
+                                        <%  })  } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <%- include('../partials/footer'); %>
+      
+        

@@ -1,0 +1,147 @@
+<%- include('../../../partials/header'); %>
+    <%- include('../../../partials/sidebar'); %>
+    
+        <div class="content-wrapper">
+
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Contact</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Contact</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include("../../../notify"); %> 
+            <%- toasts %> 
+
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <a href="/contacts-list" class="btn btn-primary">Back</a>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+                        <section class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+
+                                        <div class="card card-primary">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Add Contact</h3>
+                                            </div>
+
+                                            <form id="bannerForm" action="/contact-store" method="POST">
+
+                                                <div class="card-body">
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Address</label>
+                                                        <input type="text" name="address" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter contact address" required>
+                                                     </div>
+
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Email</label>
+                                                        <input type="email" name="email" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter email" required>
+                                                     </div>
+
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Email2</label>
+                                                        <input type="email" name="email2" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter email" required>
+                                                     </div>
+
+
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Phone Number</label>
+                                                        <input type="number" name="phone" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter phone number" required>
+                                                     </div>
+                                                       
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Phone2</label>
+                                                        <input type="number" name="phone2" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter phone2 number" required>
+                                                     </div>
+                                                       
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Facebook</label>
+                                                        <input type="text" name="facebook" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter facebook link" required>
+                                                     </div>
+                                                       
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Instagram</label>
+                                                        <input type="text" name="instagram" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter Instagram link" required>
+                                                     </div>
+
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">LinkedIn</label>
+                                                        <input type="text" name="linkedIn" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter LinkedIn link" required>
+                                                     </div>
+                                                     
+
+                                                      <div class="form-group">
+                                                        <label for="exampleInputEmail1">Map</label>
+                                                        <input type="text" name="map" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="Enter Twitter link" required>
+                                                     </div> 
+                                                
+
+                                                
+                                            
+                                                     <label for="exampleInputPassword1">Summary</label>
+                                                     <div class="form-group " >
+                                                         
+                                                         <textarea name="details" id="details" class="form-control"
+                                                             id="details" cols="20" rows="5" required></textarea>
+                                                     </div>
+                                                     
+                                                
+                                                
+
+                                                <div class="card-footer">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+        </div>
+        
+        <script>
+            
+            let d= CKEDITOR.replace('details');
+        
+        </script>
+        <%- include('../../../partials/footer'); %>
+        
